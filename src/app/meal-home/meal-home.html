@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="header">
+        <div class="welcome-message">
+            <h1>Welcome to Meal Explorer Dashboard</h1>
+            <p>Discover and explore a variety of meals!</p>
+        </div>
+        <div class="add-meal">
+            <button class="add-meal-button">+ Add New Meal</button>
+        </div>
+    </div>
+    <div class="search-section">
+        <input type="text" placeholder="Search for meals..." class="search-bar" />
+        <div class="search-icon">
+            <span>
+                <mat-icon>search</mat-icon>
+            </span>
+        </div>
+    </div>
+    <div class="meals-grid">
+        <app-meal-card *ngFor="let meal of meals()" 
+        [meal]="meal">
+        </app-meal-card>
+    </div>
+</div>

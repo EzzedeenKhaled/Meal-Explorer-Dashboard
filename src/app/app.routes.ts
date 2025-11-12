@@ -1,3 +1,5 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { MealHome } from './meal-home/meal-home';
+export const routes: Routes = [
+    { path: '', component: MealHome, pathMatch: 'full' }
+];
