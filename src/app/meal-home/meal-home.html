@@ -5,20 +5,27 @@
             <p>Discover and explore a variety of meals!</p>
         </div>
         <div class="add-meal">
-            <button class="add-meal-button">+ Add New Meal</button>
+            <button class="add-meal-button" (click)="openAddDialog()">+ Add New Meal</button>
         </div>
     </div>
     <div class="search-section">
-        <input type="text" placeholder="Search for meals..." class="search-bar" />
+        <input type="text" placeholder="Search for meals..." class="search-bar" [(ngModel)]="searchQuery"
+            (keyup.enter)="loadMeals()" />
         <div class="search-icon">
             <span>
                 <mat-icon>search</mat-icon>
             </span>
         </div>
     </div>
-    <div class="meals-grid">
-        <app-meal-card *ngFor="let meal of meals()" 
-        [meal]="meal">
-        </app-meal-card>
+    <div *ngIf="loading$ | async else showMeals" class="loading">
+        <div class="spinner"></div>
+        <p>Loading meals...</p>
     </div>
+    <ng-template #showMeals>
+        <div class="meals-grid">
+            <ng-container *ngFor="let meal of meals$ | async">
+                <app-meal-card *ngIf="meal.strMealThumb" [meal]="meal"></app-meal-card>
+            </ng-container>
+        </div>
+    </ng-template>
 </div>

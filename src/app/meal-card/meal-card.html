@@ -1,4 +1,11 @@
 <div class="meal-card">
+  <div class="image-container" (click)="openMealDialog()">
     <img [src]="meal?.strMealThumb" [alt]="meal?.strMeal" class="meal-image" />
-    <p class="meal-name">{{meal?.strMeal}}</p>
+  </div>
+  <p class="meal-name">{{ meal?.strMeal }}</p>
+  <p class="meal-category">Category: {{ meal?.strCategory }}</p>
+  <div class="meal-actions">
+    <button class="delete-button" (click)="deleteMeal(meal?.idMeal)">Delete</button>
+    <button class="edit-button">Edit</button>
+  </div>
 </div>

@@ -1,0 +1,9 @@
+<div class="dialog-container">
+  <h2>{{ meal.strMeal }}</h2>
+
+  <img [src]="meal.strMealThumb" width="100%" />
+  <p><strong>Instructions:</strong> {{ meal.strInstructions }}</p>
+  <div class="actions">
+    <button (click)="close()">Close</button>
+  </div>
+</div>
