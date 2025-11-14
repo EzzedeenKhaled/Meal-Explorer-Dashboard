@@ -32,9 +32,24 @@
   color: #222;
 }
 
+.instructions-container {
+  max-height: 200px;
+  overflow-y: auto;
+  text-align: left;
+  margin-bottom: 16px;
+  padding-right: 8px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+}
+
+.instructions-container p {
+  margin: 8px;
+}
+
+
 .actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 20px;
   width: 100%;
 }
@@ -51,4 +66,18 @@
 
 .actions button:hover {
   background-color: #3f3f9f;
+}
+
+@media (max-width: 400px) {
+  .dialog-container {
+    padding: 16px;
+  }
+
+  .dialog-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .instructions-container {
+    max-height: 100px;
+  }
 }

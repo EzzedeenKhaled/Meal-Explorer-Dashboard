@@ -11,9 +11,13 @@ import { Store } from '@ngrx/store';
 export class ConfirmDialog {
   private dialogRef = inject(DialogRef);
   private store = inject(Store);
+
+  // Get the meal id to be deleted
   constructor(
     @Inject(DIALOG_DATA) public idMeal: string, 
   ) {}
+
+  // Method to confirm deletion
   confirm() {
      if (this.idMeal) {
       this.store.dispatch(MealActions.deleteCustomMeal({ id: this.idMeal }));

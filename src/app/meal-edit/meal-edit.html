@@ -1,0 +1,27 @@
+<div class="dialog-container">
+  <h2>Edit Meal</h2>
+
+  <div class="dialog-content">
+    <img [src]="mealForm.strMealThumb" alt="{{ mealForm.strMeal }}" />
+
+    <p><strong>Name:</strong></p>
+    <input type="text" [(ngModel)]="mealForm.strMeal" />
+
+    <p><strong>Category:</strong></p>
+    <input type="text" [(ngModel)]="mealForm.strCategory" />
+
+    <p><strong>Instructions:</strong></p>
+    <textarea rows="5" [(ngModel)]="mealForm.strInstructions"></textarea>
+
+    <p><strong>Thumbnail URL:</strong></p>
+    <input type="text" [(ngModel)]="mealForm.strMealThumb" />
+
+    <p><strong>Youtube URL:</strong></p>
+    <input type="text" [(ngModel)]="mealForm.strYoutube" />
+  </div>
+
+  <div class="actions">
+    <button type="button" (click)="cancel()">Cancel</button>
+    <button type="button" (click)="update()">Update</button>
+  </div>
+</div>

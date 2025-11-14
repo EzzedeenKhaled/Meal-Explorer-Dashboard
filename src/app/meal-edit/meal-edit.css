@@ -1,0 +1,57 @@
+.dialog-container {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 900px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dialog-content {
+  overflow-y: auto;
+}
+
+.dialog-container p {
+  margin: 8px 0 4px 0;
+  text-align: left;
+}
+
+.dialog-container img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.dialog-container input,
+.dialog-container textarea {
+  width: 300px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.actions button {
+  background-color: #4f4caf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #3f3f9f;
+}

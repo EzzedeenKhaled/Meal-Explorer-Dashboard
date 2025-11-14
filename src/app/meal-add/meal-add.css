@@ -1,0 +1,56 @@
+.meal-add-container {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 900px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.meal-form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meal-form label {
+  margin: 8px 0 4px 0;
+  text-align: left;
+  width: 300px;
+}
+
+.meal-form input,
+.meal-form textarea {
+  width: 300px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+button[type="submit"],
+button[type="button"] {
+  background-color: #4f4caf;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #3f3f9f;
+}
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}

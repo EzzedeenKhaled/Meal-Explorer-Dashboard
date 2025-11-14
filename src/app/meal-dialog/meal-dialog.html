@@ -2,8 +2,11 @@
   <h2>{{ meal.strMeal }}</h2>
 
   <img [src]="meal.strMealThumb" width="100%" />
-  <p><strong>Instructions:</strong> {{ meal.strInstructions }}</p>
+  <div class="instructions-container">
+    <p><strong>Instructions:</strong> {{ meal.strInstructions }}</p>
+  </div>
   <div class="actions">
+    <button (click)="openTutorial()"><mat-icon>videocam</mat-icon></button>
     <button (click)="close()">Close</button>
   </div>
 </div>

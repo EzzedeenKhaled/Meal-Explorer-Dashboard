@@ -6,9 +6,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Dialog } from '@angular/cdk/dialog';
 import { Store } from '@ngrx/store';
-import { selectMealsLoading, selectAllMeals } from '../state/meals.selectors';
+import { selectMealsLoading, selectAllMeals, selectMealsError } from '../state/meals.selectors';
 import { loadMeals } from '../state/meals.actions'; 
-
+import { MealAdd } from '../meal-add/meal-add';
+import { FilterDialog } from '../filter-dialog/filter-dialog';
 @Component({
   selector: 'app-meal-home',
   standalone: true,
@@ -17,23 +18,36 @@ import { loadMeals } from '../state/meals.actions';
   styleUrl: './meal-home.css',
 })
 export class MealHome implements OnInit {
-  private titleService = inject(Title);
-  private store = inject(Store);
-  private dialog = inject(Dialog);
+  // Dependency injections
+  private titleService = inject(Title); // To set the page title
+  private store = inject(Store); // NgRx Store for state management
+  private dialog = inject(Dialog); // To open dialogs
 
-  loading$ = this.store.select(selectMealsLoading); // from store
-  searchQuery = 'pancake'; // default search query
+  // Observables for meals state ($ suffix indicates observable)
+
+  loading$ = this.store.select(selectMealsLoading);
   meals$ = this.store.select(selectAllMeals);
+  error$ = this.store.select(selectMealsError); 
+  searchQuery = ''; // default search query
+
+  // Lifecycle hook to initialize the component
   ngOnInit() {
     this.titleService.setTitle('Meal Explorer Dashboard');
     this.loadMeals();
   }
 
+  // dispatch action to load meals based on the search query
   loadMeals() {
     this.store.dispatch(loadMeals({ query: this.searchQuery }));
   }
 
+  // Method to open the add meal dialog
   openAddDialog() {
-    this.dialog.open(MealCard);
+    this.dialog.open(MealAdd);
+  }
+
+  // Method to open the filter dialog
+  openFilterDialog() {
+    this.dialog.open(FilterDialog);
   }
 }

@@ -1,3 +1,4 @@
+// Meal model, good for intellisense and type checking
 export interface Meal {
   idMeal: string;
   strMeal: string;

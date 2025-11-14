@@ -1,0 +1,24 @@
+<div class="meal-add-container">
+    <h2>Add New Meal</h2>
+    <form #mealForm="ngForm" (ngSubmit)="add(meal)" class="meal-form">
+        <label for="strMeal">Meal Name:</label>
+        <input type="text" id="strMeal" [(ngModel)]="meal.strMeal" name="strMeal" required />
+
+        <label for="strCategory">Category:</label>
+        <input type="text" id="strCategory" [(ngModel)]="meal.strCategory" name="strCategory" required />
+
+        <label for="strInstructions">Instructions:</label>
+        <textarea id="strInstructions" [(ngModel)]="meal.strInstructions" name="strInstructions" required
+            rows="5"></textarea>
+
+        <label for="strYoutube">YouTube Link:</label>
+        <input type="text" id="strYoutube" [(ngModel)]="meal.strYoutube" name="strYoutube" />
+
+        <label for="strMealThumb">Image URL:</label>
+        <input type="text" id="strMealThumb" [(ngModel)]="meal.strMealThumb" name="strMealThumb" />
+        <div class="actions">
+            <button type="submit" [disabled]="mealForm.invalid">Add Meal</button>
+            <button type="button" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

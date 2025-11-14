@@ -1,0 +1,34 @@
+<div class="dialog-container">
+  <h2>Filter Meals</h2>
+
+  <div class="dialog-content">
+    <p>Main Ingredient</p>
+    <select [(ngModel)]="selectedIngredient">
+      <option value="">-- Select Ingredient --</option>
+      <option *ngFor="let i of ingredients()">
+        {{ i }}
+      </option>
+    </select>
+
+    <p>Category</p>
+    <select [(ngModel)]="selectedCategory">
+      <option value="">-- Select Category --</option>
+      <option *ngFor="let c of categories()">
+        {{ c }}
+      </option>
+    </select>
+
+    <p>Area</p>
+    <select  [(ngModel)]="selectedArea">
+      <option value="">-- Select Area --</option>
+      <option *ngFor="let a of areas()">
+        {{ a }}
+      </option>
+    </select>
+  </div>
+
+  <div class="actions">
+    <button (click)="close()">Cancel</button>
+    <button (click)="apply()">Apply</button>
+  </div>
+</div>

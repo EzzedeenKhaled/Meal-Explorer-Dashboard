@@ -8,23 +8,38 @@
             <button class="add-meal-button" (click)="openAddDialog()">+ Add New Meal</button>
         </div>
     </div>
+
     <div class="search-section">
         <input type="text" placeholder="Search for meals..." class="search-bar" [(ngModel)]="searchQuery"
             (keyup.enter)="loadMeals()" />
         <div class="search-icon">
-            <span>
+            <span (click)="loadMeals()">
                 <mat-icon>search</mat-icon>
             </span>
         </div>
+        <button class="filter-button" (click)="openFilterDialog()">
+            <mat-icon>filter_list</mat-icon>
+        </button>
     </div>
+
+    <!-- Show loading spinner while meals are being fetched -->
     <div *ngIf="loading$ | async else showMeals" class="loading">
         <div class="spinner"></div>
         <p>Loading meals...</p>
     </div>
+
+    <!-- Template to display meals after loading -->
     <ng-template #showMeals>
+        <!-- Display error message if there is an error fetching meals -->
+        <div *ngIf="error$ | async as error" class="error-message">
+            {{ error }}
+        </div>
+
         <div class="meals-grid">
+            <!-- Loop through meals$ observable and display each meal in a card -->
             <ng-container *ngFor="let meal of meals$ | async">
-                <app-meal-card *ngIf="meal.strMealThumb" [meal]="meal"></app-meal-card>
+                <!-- Only show meal card if the meal has an image -->
+                <app-meal-card *ngIf="meal.strMealThumb" [meal]="meal" id="{{ meal.idMeal }}"></app-meal-card>
             </ng-container>
         </div>
     </ng-template>

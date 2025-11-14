@@ -42,12 +42,29 @@
 }
 
 .search-icon {
-    position: absolute;
-    right: 10px;
-    top: 8px;
+  position: absolute;
+  right: 50px; 
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .search-icon span {
+    color: black;
+    cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+.filter-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 24px;
     color: black;
 }
 
@@ -86,3 +103,26 @@
     margin-top: 20px;
     padding: 10px;
 }
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .welcome-message {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+  .add-meal-button {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+  }
+  .search-icon {
+    position: absolute;
+  }
+
+  .meals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

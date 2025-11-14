@@ -6,6 +6,6 @@
   <p class="meal-category">Category: {{ meal?.strCategory }}</p>
   <div class="meal-actions">
     <button class="delete-button" (click)="deleteMeal(meal?.idMeal)">Delete</button>
-    <button class="edit-button">Edit</button>
+    <button class="edit-button" (click)="openEditDialog(meal)">Edit</button>
   </div>
 </div>
