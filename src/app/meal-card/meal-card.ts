@@ -4,9 +4,11 @@ import { Dialog } from '@angular/cdk/dialog';
 import { ConfirmDialog } from '../confirm-dialog/confirm-dialog';
 import { MealDialog } from '../meal-dialog/meal-dialog';
 import { MealEdit } from '../meal-edit/meal-edit';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-meal-card',
   templateUrl: './meal-card.html',
+  imports: [CommonModule],
   styleUrls: ['./meal-card.css'],
 })
 export class MealCard {

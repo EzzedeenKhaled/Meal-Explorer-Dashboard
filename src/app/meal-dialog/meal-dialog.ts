@@ -3,10 +3,11 @@ import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { Meal } from '../models/meal.model';
 import { inject } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-meal-dialog',
   templateUrl: './meal-dialog.html',
-  imports: [MatIcon],
+  imports: [MatIcon, CommonModule],
   styleUrls: ['./meal-dialog.css']
 })
 export class MealDialog {

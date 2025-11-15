@@ -6,6 +6,7 @@ export interface Meal {
   strInstructions: string;
   strYoutube: string;
   strMealThumb: string;
+  isCustom: boolean; 
 }
 
 // Wrapper for the API response

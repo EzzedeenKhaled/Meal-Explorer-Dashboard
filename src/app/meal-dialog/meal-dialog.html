@@ -3,10 +3,10 @@
 
   <img [src]="meal.strMealThumb" width="100%" />
   <div class="instructions-container">
-    <p><strong>Instructions:</strong> {{ meal.strInstructions }}</p>
+    <p *ngIf="meal.strInstructions"><strong>Instructions:</strong> {{ meal.strInstructions }}</p>
   </div>
   <div class="actions">
-    <button (click)="openTutorial()"><mat-icon>videocam</mat-icon></button>
+    <button *ngIf="meal.strYoutube" (click)="openTutorial()"><mat-icon>videocam</mat-icon></button>
     <button (click)="close()">Close</button>
   </div>
 </div>

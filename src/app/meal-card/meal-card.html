@@ -3,7 +3,10 @@
     <img [src]="meal?.strMealThumb" [alt]="meal?.strMeal" class="meal-image" />
   </div>
   <p class="meal-name">{{ meal?.strMeal }}</p>
-  <p class="meal-category">Category: {{ meal?.strCategory }}</p>
+  <div class="meal-info">
+  <p class="meal-category" *ngIf="meal?.strCategory">Category: {{ meal?.strCategory }}</p>
+  <p class="custom-meal" *ngIf="meal?.isCustom">Custom Meal</p>
+  </div>
   <div class="meal-actions">
     <button class="delete-button" (click)="deleteMeal(meal?.idMeal)">Delete</button>
     <button class="edit-button" (click)="openEditDialog(meal)">Edit</button>

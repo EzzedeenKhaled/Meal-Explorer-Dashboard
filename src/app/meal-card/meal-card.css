@@ -32,11 +32,25 @@
     text-align: center;
 }
 
+.meal-info {
+    text-align: center;
+
+}
+
 .meal-category {
+    display: inline-block;
     margin-top: 5px;
     font-size: 14px;
     color: #555;
-    text-align: center;
+    margin-right: 10px;
+}
+
+.custom-meal {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #27ae60;
+    font-weight: bold;
 }
 
 .meal-actions {

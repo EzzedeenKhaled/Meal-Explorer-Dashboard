@@ -22,7 +22,8 @@ export class MealAdd {
     strCategory: "",
     strInstructions: "",
     strYoutube: "",
-    strMealThumb: ""
+    strMealThumb: "",
+    isCustom: true
   };
 
   // Method to add a new meal
